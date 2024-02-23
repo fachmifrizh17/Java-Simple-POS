@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="struk" language="groovy" pageWidth="226" pageHeight="431" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" uuid="aaf7be79-1e9a-4062-ba5d-20b8a0edbe03">
+	<property name="ireport.zoom" value="1.9487171000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="tr" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     transaksi.`NoTransaksi` AS transaksi_NoTransaksi,
+     transaksi.`Tanggal` AS transaksi_Tanggal,
+     transaksi.`NamaKaryawan` AS transaksi_NamaKaryawan,
+     transaksi.`NamaPelanggan` AS transaksi_NamaPelanggan,
+     transaksi.`Nopol` AS transaksi_Nopol,
+     transaksi.`JenisKendaraan` AS transaksi_JenisKendaraan,
+     transaksi.`JenisPelayanan` AS transaksi_JenisPelayanan,
+     transaksi.`Harga` AS transaksi_Harga
+FROM
+     `transaksi` transaksi
+WHERE NoTransaksi LIKE '%$P!{tr}%']]>
+	</queryString>
+	<field name="transaksi_NoTransaksi" class="java.lang.String"/>
+	<field name="transaksi_Tanggal" class="java.sql.Date"/>
+	<field name="transaksi_NamaKaryawan" class="java.lang.String"/>
+	<field name="transaksi_NamaPelanggan" class="java.lang.String"/>
+	<field name="transaksi_Nopol" class="java.lang.String"/>
+	<field name="transaksi_JenisKendaraan" class="java.lang.String"/>
+	<field name="transaksi_JenisPelayanan" class="java.lang.String"/>
+	<field name="transaksi_Harga" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="33" width="186" height="20" uuid="cd447d0d-8c13-4612-8cb7-d9684787958a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<text><![CDATA[=================================]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="186" height="20" uuid="d19c0a14-9f6e-4c9c-a13f-a216468fab6f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<text><![CDATA[=================================]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="10" width="186" height="33" uuid="ee1def28-4914-4a65-9060-407a91f513be"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[YELLOW CAR WASH]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="69" splitType="Stretch">
+			<textField>
+				<reportElement x="118" y="0" width="37" height="15" uuid="56947e26-9f61-4e9b-870c-018e08f1466c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_Tanggal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="86" y="15" width="100" height="15" uuid="b2f9e5cc-da43-4311-9b5c-4ad5ea9b33d1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_NoTransaksi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="0" width="76" height="15" uuid="a5aaeef2-1cef-4171-874e-b4f770aca4d5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="15" width="76" height="15" uuid="1d55ee3e-401b-46fb-8686-f7367439b0ff"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. Transaksi]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="86" y="30" width="100" height="15" uuid="7933cf5a-c84a-4edb-8113-3568d4dc7fa6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_NamaPelanggan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="30" width="76" height="15" uuid="9ceaa84d-85da-4d32-a0a9-fa1461abee53"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pelanggan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="45" width="76" height="15" uuid="0559028e-387b-451e-908a-77bb9d578ffd"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Karyawan]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="86" y="45" width="100" height="15" uuid="a0ef7717-e454-410f-bec0-0fed46dfac4c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_NamaKaryawan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="21" width="186" height="1" uuid="4c3e721d-bfbf-4289-b196-1c3c8607a2d1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="186" height="1" uuid="d5503aa6-e5c2-4538-9291-887c987ad6ea"/>
+			</line>
+			<staticText>
+				<reportElement x="121" y="1" width="65" height="20" uuid="0d074463-97f3-4315-b6a5-34c50a32de25"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Pelayanan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="1" width="59" height="20" uuid="1d24b807-46fa-48cd-9e41-1f6a21600960"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[No.Polisi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="1" width="61" height="20" uuid="8200c004-b790-4439-9e26-40ce18377069"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Kendaraan]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="61" height="20" uuid="5723bd6c-ae91-43e6-8644-ef1a59bf81b1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_JenisKendaraan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="62" y="0" width="59" height="20" uuid="68af3d35-216b-4b57-9a49-564588bdc555"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_Nopol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="0" width="65" height="20" uuid="e40854c4-0bcb-46b3-aaef-8247ba9992db"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_JenisPelayanan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="20" width="186" height="14" uuid="ac58f52c-dfb4-48e4-949e-c58bf6387b85"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="186" height="20" uuid="bce413b1-b771-48ae-b293-c2390df17341"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<text><![CDATA[=================================]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="34" width="22" height="20" uuid="a33d8973-9439-4b76-a2b5-54d963931f22"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Rp,-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="84" y="34" width="100" height="20" uuid="979272fc-408d-427c-9e8a-3473a9183bf9"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transaksi_Harga}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="35" width="186" height="15" uuid="e27fd9dd-49f1-4f58-9d02-02bd54a5b79b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<text><![CDATA[=================================]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="15" width="84" height="20" uuid="dbe26301-a582-41e0-a44b-cb7e85d07978"/>
+				<textElement>
+					<font fontName="Times New Roman" size="5"/>
+				</textElement>
+				<text><![CDATA[*Harap simpan bukti pembayaran ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="20" width="83" height="8" uuid="95c2c1bf-cd00-47d0-aa02-08421721648a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="5"/>
+				</textElement>
+				<text><![CDATA[jika ingin melakukan pembatalan]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="54" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="costumer" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="89e1d827-2bb1-4e5d-9c7e-b7b4bfdf91a2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     datacostumer.`Id` AS datacostumer_Id,
+     datacostumer.`Nama` AS datacostumer_Nama,
+     datacostumer.`Alamat` AS datacostumer_Alamat,
+     datacostumer.`NoTlp` AS datacostumer_NoTlp
+FROM
+     `datacostumer` datacostumer]]>
+	</queryString>
+	<field name="datacostumer_Id" class="java.lang.String"/>
+	<field name="datacostumer_Nama" class="java.lang.String"/>
+	<field name="datacostumer_Alamat" class="java.lang.String"/>
+	<field name="datacostumer_NoTlp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="97" splitType="Stretch">
+			<staticText>
+				<reportElement x="161" y="10" width="236" height="50" uuid="2efc5324-ae3e-46c6-9019-3feb50113b84"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[YELLOW CAR WASH]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="95" width="555" height="1" uuid="aceebd11-f166-47ac-bb1c-f57e8d19ca46"/>
+			</line>
+			<line>
+				<reportElement x="1" y="92" width="555" height="1" uuid="4f1fc7ca-46fb-44b5-879b-720bea1c14db"/>
+			</line>
+			<staticText>
+				<reportElement x="170" y="40" width="218" height="38" uuid="9601bfee-316c-423b-aba3-c3fc389812fc"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Alamat : Jl. Raya Rawa Buntu No.168B, Rw. Buntu, Kec. Serpong, Kota Tangerang Selatan, Banten 15310]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement x="97" y="13" width="357" height="25" uuid="d9a92bc8-8587-4bab-9360-4a75912425d0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA PELANGGAN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="176" y="1" width="100" height="20" uuid="16a25224-60b1-45a1-b68e-a48822ff2f72"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA PELANGGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="1" width="100" height="20" uuid="45d94ba5-89f9-4700-9e10-eee104eff742"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELEPON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="1" width="100" height="20" uuid="ea9962c8-1302-4462-bba5-1589569754ee"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="70" y="0" width="400" height="1" uuid="3d64f68f-f5f1-4c34-879d-f280bfdab64b"/>
+			</line>
+			<staticText>
+				<reportElement x="70" y="1" width="100" height="20" uuid="ee877dbf-deef-4bcc-860c-4653422462fa"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID PELANGGAN]]></text>
+			</staticText>
+			<line>
+				<reportElement x="70" y="21" width="400" height="1" uuid="8b61191a-1da5-4ced-9de4-23d13867cc26"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="68" splitType="Stretch">
+			<textField>
+				<reportElement x="70" y="2" width="100" height="20" uuid="4f5ea9cd-ffe8-47b8-bcff-d65f69a35676"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{datacostumer_Id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="2" width="100" height="20" uuid="d0679103-5cf3-44f7-83b4-6269a206e0c9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{datacostumer_Nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="275" y="2" width="100" height="20" uuid="26a9eaa0-feac-4924-ab17-6c470f344dca"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{datacostumer_NoTlp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="2" width="100" height="31" uuid="701404b9-947d-4b00-a322-45b23e692e22"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{datacostumer_Alamat}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="70" y="33" width="400" height="1" uuid="ce85fb17-1464-4e39-84a7-4f4fe85a610d"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="109" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="382" y="17" width="151" height="20" uuid="201c3b0e-b944-4bb2-924b-9232c7bdb19a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="338" y="86" width="142" height="20" uuid="e7cfd82f-0849-4d4e-9847-ee4e83c742da"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[(..........Alex Kurniawan..........)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="17" width="100" height="20" uuid="71067fd7-8710-43b6-9914-b35d00ef9c25"/>
+				<text><![CDATA[Tangerang,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="27" width="128" height="20" uuid="b6b8bac3-fe7a-47dd-a49d-d2267536ea6e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Pemilik Yellow CarWash]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="4" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="4" splitType="Stretch"/>
+	</summary>
+</jasperReport>

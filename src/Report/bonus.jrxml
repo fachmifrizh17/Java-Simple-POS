@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="gajian" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f79161f5-7ce6-494a-bbaa-ee097be395c3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="bonus" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     bonus.`kode` AS bonus_kode,
+     bonus.`nama` AS bonus_nama,
+     bonus.`id` AS bonus_id,
+     bonus.`tipe` AS bonus_tipe,
+     bonus.`jumlah` AS bonus_jumlah,
+     bonus.`total` AS bonus_total,
+     bonus.`bonus` AS bonus_bonus
+FROM
+     `bonus` bonus
+WHERE kode LIKE '%$P!{bonus}%']]>
+	</queryString>
+	<field name="bonus_kode" class="java.lang.String"/>
+	<field name="bonus_nama" class="java.lang.String"/>
+	<field name="bonus_id" class="java.lang.String"/>
+	<field name="bonus_tipe" class="java.lang.String"/>
+	<field name="bonus_jumlah" class="java.lang.Integer"/>
+	<field name="bonus_total" class="java.lang.Integer"/>
+	<field name="bonus_bonus" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="3" width="236" height="50" uuid="ae61fb2d-21fe-4744-8d01-0c1ff48343b1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[YELLOW CAR WASH]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="88" width="555" height="1" uuid="6dd6f741-1487-4268-97d4-fd54bc83ab25"/>
+			</line>
+			<staticText>
+				<reportElement x="169" y="33" width="218" height="38" uuid="70f594cc-90be-4f7c-9286-c6a4855e3110"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Alamat : Jl. Raya Rawa Buntu No.168B, Rw. Buntu, Kec. Serpong, Kota Tangerang Selatan, Banten 15310]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="85" width="555" height="1" uuid="b4acd9d2-b481-4756-8fd0-ccddb10b1764"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="131" splitType="Stretch">
+			<staticText>
+				<reportElement x="133" y="0" width="280" height="25" uuid="5ca79352-3c01-4a52-8932-ae6cdcba8b71"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[BONUS KARYAWAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="47" width="100" height="20" uuid="16b5ca8d-6b7d-4512-a862-82e7c1617cf9"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[KODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="47" width="15" height="20" uuid="4e0c868d-ee35-46c5-981c-a3154d9632a2"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="67" width="100" height="20" uuid="34bececb-c0ab-47e4-bb52-9619cff36255"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[ID KARYAWAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="67" width="15" height="20" uuid="77b76ade-61d2-49ae-913f-4401aec12a90"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="123" y="47" width="100" height="20" uuid="88eee253-a106-4faa-ac7e-85f26b2f94f7"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bonus_kode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="123" y="67" width="100" height="20" uuid="c5511c52-1730-4764-b504-81ad3b74cd62"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bonus_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<line>
+				<reportElement x="34" y="2" width="497" height="1" uuid="9420745d-faee-4a38-a228-b33dc4a1a68b"/>
+			</line>
+			<staticText>
+				<reportElement x="34" y="3" width="100" height="20" uuid="3174c3e6-ffce-4d1c-bb66-df5363082da2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="3" width="100" height="20" uuid="5f9e2e55-ffd9-497e-8868-8eb5560a6c0a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JENIS KENDARAAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="231" y="3" width="100" height="20" uuid="252d06bb-4344-494f-807b-c8609d98337c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BONUS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="3" width="100" height="20" uuid="ce033157-c733-4e0b-aeb4-c42a56aedaa1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="431" y="3" width="100" height="20" uuid="7810efe0-dd97-488b-904a-65d24c0ec462"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL BONUS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement x="33" y="20" width="498" height="1" uuid="787abf64-7825-4f8a-93b9-3adffe999511"/>
+			</line>
+			<textField>
+				<reportElement x="33" y="1" width="100" height="20" uuid="c241f6e4-e5db-43a8-9010-a7379ed38f0f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bonus_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="1" width="100" height="20" uuid="e3520a36-3d3b-40e0-9ec0-30854a181924"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bonus_tipe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="231" y="0" width="100" height="20" uuid="3e637e9f-a502-4352-b970-4478b9b2c664"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bonus_jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="1" width="100" height="20" uuid="8858da28-b1db-446d-b3bf-5e62838267dc"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bonus_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="431" y="1" width="100" height="20" uuid="fd4eadfc-ba75-46ba-9ef8-08e9df2261f3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bonus_bonus}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="33" y="1" width="498" height="1" uuid="d8337ffc-f170-4b29-87ed-a7973cfa5dc5"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="116" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="388" y="23" width="151" height="20" uuid="72194702-8b3e-4410-8f12-c03d9d425371"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="344" y="92" width="142" height="20" uuid="bbc57503-c8ee-4bde-b821-bbc016c77a13"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[(..........Alex Kurniawan..........)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="33" width="128" height="20" uuid="72bb7907-702b-49da-ae70-a34f018d4d51"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Pemilik Yellow CarWash]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="23" width="100" height="20" uuid="3e6012d2-d526-4e44-bff0-17d51cd39485"/>
+				<text><![CDATA[Tangerang,]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

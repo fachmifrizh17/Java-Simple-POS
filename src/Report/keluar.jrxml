@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="keluar" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cb1088ec-32fd-4a39-b0ed-c7621a9b5ab1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="keluar" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     barang.`stok` AS barang_stok,
+     barang_keluar.`id_dk` AS barang_keluar_id_dk,
+     barang_keluar.`nama_karyawan` AS barang_keluar_nama_karyawan,
+     barang_keluar.`id_barang` AS barang_keluar_id_barang,
+     barang_keluar.`nama_barang` AS barang_keluar_nama_barang,
+     barang_keluar.`tgl` AS barang_keluar_tgl,
+     barang_keluar.`jumlah` AS barang_keluar_jumlah
+FROM
+     `barang` barang,
+     `barang_keluar` barang_keluar
+WHERE id_dk LIKE '%$P!{keluar}%']]>
+	</queryString>
+	<field name="barang_stok" class="java.lang.Integer"/>
+	<field name="barang_keluar_id_dk" class="java.lang.String"/>
+	<field name="barang_keluar_nama_karyawan" class="java.lang.String"/>
+	<field name="barang_keluar_id_barang" class="java.lang.String"/>
+	<field name="barang_keluar_nama_barang" class="java.lang.String"/>
+	<field name="barang_keluar_tgl" class="java.sql.Date"/>
+	<field name="barang_keluar_jumlah" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="103" splitType="Stretch">
+			<staticText>
+				<reportElement x="162" y="-3" width="236" height="50" uuid="47f3227e-4eca-4448-b27f-1ec9976493f0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[YELLOW CAR WASH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="171" y="27" width="218" height="38" uuid="460a5b39-d8f8-4aa0-b183-01bb1c413405"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Alamat : Jl. Raya Rawa Buntu No.168B, Rw. Buntu, Kec. Serpong, Kota Tangerang Selatan, Banten 15310]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="102" width="555" height="1" uuid="885f2a9a-a358-4627-9bc5-a1d8447fb1b2"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="109" splitType="Stretch">
+			<line>
+				<reportElement x="2" y="0" width="555" height="1" uuid="cb79b6bb-a3fe-4c1f-855a-1e932b39e3c9"/>
+			</line>
+			<staticText>
+				<reportElement x="121" y="1" width="312" height="40" uuid="a97f4784-14a4-49cc-8151-b4a0c1530a04"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[LAPORAN BARANG KELUAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="86" width="100" height="20" uuid="43fd5b03-7673-417c-b711-5778272b936d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID BARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="53" width="100" height="20" uuid="4239f6b4-81dd-4a27-8936-ee11bfb218f4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID BARANG KELUAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="104" y="53" width="14" height="20" uuid="62a01f1b-8d9d-472f-a12d-2d8dd3da486b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="104" y="86" width="14" height="20" uuid="2433ce89-8118-44aa-a7bd-05159faaefea"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="122" y="53" width="100" height="20" uuid="38d86fab-6e6c-4b9c-aa30-00c646f2a9ab"/>
+				<textFieldExpression><![CDATA[$F{barang_keluar_id_dk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="86" width="100" height="20" uuid="2a9001f8-474b-4019-b8e7-2abe8e9e3487"/>
+				<textFieldExpression><![CDATA[$F{barang_keluar_id_barang}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="122" y="1" width="100" height="20" uuid="0773cf53-ab8b-48ce-bb07-07887053d74c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KARYAWAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="1" width="100" height="20" uuid="bd41bea2-0624-442f-b431-f8de4735c9d0"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA BARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="1" width="100" height="20" uuid="c8aac653-ef9e-44ef-9c0b-86a71d972246"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[STOK]]></text>
+			</staticText>
+			<line>
+				<reportElement x="22" y="0" width="500" height="1" uuid="69f321d5-6ba0-4565-b3e2-97a43d4e3abd"/>
+			</line>
+			<staticText>
+				<reportElement x="222" y="1" width="100" height="20" uuid="85edda66-9980-4770-9778-ebabdf3eeb12"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TGL KELUAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="322" y="1" width="100" height="20" uuid="6d267dbe-d1f0-4403-8f15-d70c84bc07ba"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUMLAH]]></text>
+			</staticText>
+			<line>
+				<reportElement x="22" y="21" width="500" height="1" uuid="b5c21c91-dd63-4d1b-9807-97dd0ee7eee3"/>
+			</line>
+			<textField>
+				<reportElement x="22" y="22" width="100" height="20" uuid="25747cad-e643-45bb-9c2d-c49e5aaa48be"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{barang_keluar_nama_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="22" width="100" height="20" uuid="2d5c8ef3-ae9a-4fc0-8254-c0eb06fd04c8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{barang_keluar_nama_karyawan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="23" width="43" height="20" uuid="8ced91e2-ad84-430a-b5c9-9712a8b46c49"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{barang_keluar_tgl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="22" width="100" height="20" uuid="ccda13c0-7e9a-4259-b05c-69e1be7b191c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{barang_keluar_jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="422" y="22" width="100" height="20" uuid="8a60d5e4-d2cf-4e1e-809a-d00a8b941165"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{barang_stok}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="22" y="42" width="500" height="1" uuid="4a038219-fd58-45f7-8080-7ba6233fa6af"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="129" splitType="Stretch">
+			<staticText>
+				<reportElement x="375" y="107" width="142" height="20" uuid="c553f831-eff7-4a77-8a90-b6b1322d16ff"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[(..........Alex Kurniawan..........)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="341" y="38" width="80" height="20" uuid="d207c535-95e5-4ae6-a65f-a90f9f964338"/>
+				<text><![CDATA[Tangerang,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="58" width="128" height="20" uuid="1abdf66c-0487-4c54-adb7-9c0445bd2716"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Pemilik Yellow CarWash]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="397" y="38" width="124" height="20" uuid="7f06e4dc-543c-48f6-ad73-d351e24bb6a8"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

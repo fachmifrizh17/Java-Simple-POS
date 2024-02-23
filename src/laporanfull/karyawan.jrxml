@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="karyawan" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a367505e-8a19-4d22-9462-4fd2656606f0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     datakaryawan.`Id` AS datakaryawan_Id,
+     datakaryawan.`Nama` AS datakaryawan_Nama,
+     datakaryawan.`Alamat` AS datakaryawan_Alamat,
+     datakaryawan.`NoTlp` AS datakaryawan_NoTlp,
+     datakaryawan.`Jabatan` AS datakaryawan_Jabatan,
+     datakaryawan.`Tanggal_Masuk` AS datakaryawan_Tanggal_Masuk
+FROM
+     `datakaryawan` datakaryawan]]>
+	</queryString>
+	<field name="datakaryawan_Id" class="java.lang.String"/>
+	<field name="datakaryawan_Nama" class="java.lang.String"/>
+	<field name="datakaryawan_Alamat" class="java.lang.String"/>
+	<field name="datakaryawan_NoTlp" class="java.lang.String"/>
+	<field name="datakaryawan_Jabatan" class="java.lang.String"/>
+	<field name="datakaryawan_Tanggal_Masuk" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement x="161" y="15" width="236" height="50" uuid="059619c1-c1f7-4905-bab6-26822763caf4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[YELLOW CAR WASH]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="100" width="555" height="1" uuid="fdb6a5c5-4858-49a9-b026-fa6e453aa3f1"/>
+			</line>
+			<staticText>
+				<reportElement x="170" y="45" width="218" height="38" uuid="8552362e-6338-496b-8e3d-bfd967068582"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Alamat : Jl. Raya Rawa Buntu No.168B, Rw. Buntu, Kec. Serpong, Kota Tangerang Selatan, Banten 15310]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="97" width="555" height="1" uuid="5e833574-1ab6-45c9-b3ca-5b2c93d0021f"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="137" y="0" width="280" height="25" uuid="f3b84ebf-0915-4afa-b291-95794cfee16d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA KARYAWAN]]></text>
+			</staticText>
+			<line>
+				<reportElement x="26" y="49" width="508" height="1" uuid="082488f3-49ae-4522-9560-2e2b2ef1741f"/>
+			</line>
+			<staticText>
+				<reportElement x="118" y="50" width="100" height="20" uuid="f8942764-ae7a-4705-9411-66c5155c8efa"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA KARYAWAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="297" y="50" width="100" height="20" uuid="ac0e3123-5b3d-4691-b1fb-37647030217c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELEPON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="50" width="100" height="20" uuid="817c0aee-413b-47fe-aae9-defb84b11979"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TANGGAL MASUK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="367" y="50" width="100" height="20" uuid="d810aed3-a950-4c44-a9fe-5c65da9f8f30"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JABATAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="50" width="100" height="20" uuid="06d17ee3-8ecc-42f1-8133-f8d9c8bf83e8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="26" y="70" width="508" height="1" uuid="221ab2fe-9518-49b7-b68c-7628a3c40ff6"/>
+			</line>
+			<staticText>
+				<reportElement x="26" y="50" width="100" height="20" uuid="8414bfdf-9bad-4b9c-bd57-07bd4df3451b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID KARYAWAN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="57" splitType="Stretch">
+			<textField>
+				<reportElement x="119" y="1" width="100" height="20" uuid="1ea4e90a-ceef-4d8a-b68e-dbfbde377572"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datakaryawan_Nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="299" y="0" width="100" height="20" uuid="6f9d971f-1dc2-4e17-a930-3a69f9f7737a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datakaryawan_NoTlp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="2" width="35" height="20" uuid="368fb6c1-cdd1-4b1a-afa8-c1e50b08c6f7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datakaryawan_Tanggal_Masuk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="373" y="0" width="88" height="20" uuid="4569999a-9da9-47c8-aa58-fdef3eee8d8a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datakaryawan_Jabatan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="84" height="42" uuid="13c86a29-e8df-493f-be26-cd154e6b1b0f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datakaryawan_Alamat}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="26" y="41" width="508" height="1" uuid="ea570a01-8df2-4727-9108-7079da8f9252"/>
+			</line>
+			<textField>
+				<reportElement x="26" y="0" width="100" height="20" uuid="7364caea-d397-497f-8fa3-6af42103bdab"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datakaryawan_Id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="106" splitType="Stretch">
+			<staticText>
+				<reportElement x="339" y="84" width="142" height="20" uuid="830d3385-1626-4379-a3c9-762f6b3ec1ad"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[(..........Alex Kurniawan..........)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="25" width="128" height="20" uuid="5b300b69-207a-486a-8ab0-dc5f0a0cc0a0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Pemilik Yellow CarWash]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="15" width="100" height="20" uuid="dfefbf1c-2ec1-4b83-8ec1-485da473b9eb"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Tangerang,]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="383" y="15" width="151" height="20" uuid="09e79c5f-4134-4e64-82cf-c9a120e0fde1"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="5" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="3" splitType="Stretch"/>
+	</summary>
+</jasperReport>

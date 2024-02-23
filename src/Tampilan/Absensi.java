@@ -1,0 +1,649 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Tampilan;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GraphicsEnvironment;
+import java.awt.Point;
+import java.io.File;
+import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import koneksi.koneksi;
+import java.util.HashMap;
+import java.util.Locale;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Map;
+import javax.swing.ImageIcon;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+
+/**
+ *
+ * @author Lenovo
+ */
+public class Absensi extends javax.swing.JFrame {
+     private Connection conn = new koneksi().getkoneksi();
+    private DefaultTableModel tabmode;
+    Statement stm;
+    ResultSet rs;
+    private String jasperPrint;
+
+    
+    
+    protected void kosong(){
+        nama.setText("");
+        txtMasuk.setText("");
+        txtKeluar.setText("");
+        cmbLembur.setSelectedItem("");
+        txtKeterangan.setText("");
+        txtCari.setText("");
+        Save.setEnabled(true);
+        Edit.setEnabled(false);
+    }
+    
+    protected void datatable(){
+        Object [] baris = {"Id","Nama","Masuk","Keluar","Tanggal","Lembur","Keterangan"};
+            tabmode = new DefaultTableModel (null,baris);
+            TabelAbsen.setModel(tabmode);
+            String sql = "select * from absen";
+            try{
+                    java.sql.Statement stat = conn.createStatement();
+                    ResultSet hasil = stat.executeQuery(sql);
+                    while (hasil.next()){
+                        String a= hasil.getString("Id");
+                        String b= hasil.getString("Nama");
+                        String c= hasil.getString("Masuk");
+                        String d= hasil.getString("Keluar");
+                        String e= hasil.getString("tgl");
+                        String f= hasil.getString("Lembur");
+                        String g= hasil.getString("Keterangan");
+                        
+                        String[] data = {a,b,c,d,e,f,g};
+                        tabmode.addRow(data);
+                 
+                    
+                    }
+            } catch (Exception e){
+            }
+    }
+
+    /**
+     * Creates new form Absensi
+     */
+    public Absensi() {
+        initComponents();
+        tampilid();
+        block();
+        datatable();
+         Locale locale = new Locale ("Id","ID");
+        Locale.setDefault(locale);
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar cal = Calendar.getInstance();
+        tgl.setText(dateFormat.format(cal.getTime()));
+        tgl.setEnabled(false);
+        ImageIcon img = new ImageIcon("src/icon/car.png");
+        this.setIconImage(img.getImage());
+        initUI();
+    }
+
+    private void initUI(){ 
+        getContentPane().setBackground(new Color(245, 245, 245));
+        
+        Dimension windowSize = getSize();
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        Point centerPoint = ge.getCenterPoint();
+        int dx = centerPoint.x - windowSize.width / 2;
+        int dy = centerPoint.y - windowSize.height / 2;    
+        setLocation(dx, dy);
+    }
+
+    protected void block(){
+    nama.setEnabled(false);
+    }
+    
+     private void aktif(boolean x){
+    id.setEditable(x);
+    }
+     
+     public void tampilid() {
+        java.sql.Statement st;
+        java.sql.Connection con;
+        java.sql.ResultSet rs;
+        try {
+            con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/yellowcarwash", "root", "");
+            st = con.createStatement();
+            String s = "select * from datakaryawan";
+            rs = st.executeQuery(s);
+            id.addItem("ID KARYAWAN ");
+            while (rs.next()) {
+                id.addItem(rs.getString(1));
+                //jc adalah nama variabel Jcombobox
+                //rs.getString(2) adalah kolom nama_dosen yang diambil secara urut dimulai dari satu
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "ERROR" + e.getMessage());
+            //digunakan untuk menampilkan pesan jika terjadi error 
+        }
+    }
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        txtKeluar = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        nama = new javax.swing.JTextField();
+        txtMasuk = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        cmbLembur = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtKeterangan = new javax.swing.JTextArea();
+        jLabel10 = new javax.swing.JLabel();
+        id = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        tgl = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        Save = new javax.swing.JButton();
+        Edit = new javax.swing.JButton();
+        Delete = new javax.swing.JButton();
+        Exit = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        Exit1 = new javax.swing.JButton();
+        Cetak = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        txtCari = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TabelAbsen = new javax.swing.JTable();
+        jLabel11 = new javax.swing.JLabel();
+        Cari = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ABSEN");
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 5, true));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel3.setText("DATA ABSEN");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1050, 90));
+
+        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtKeluar.setBackground(new java.awt.Color(102, 102, 102));
+        txtKeluar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        txtKeluar.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jPanel3.add(txtKeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 160, 30));
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel5.setText("Nama Karyawan");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 110, 30));
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setText("Keterangan");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 110, 30));
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel7.setText("Absen Masuk");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 110, 30));
+
+        nama.setBackground(new java.awt.Color(102, 102, 102));
+        nama.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        nama.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jPanel3.add(nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 160, 30));
+
+        txtMasuk.setBackground(new java.awt.Color(102, 102, 102));
+        txtMasuk.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        txtMasuk.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jPanel3.add(txtMasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 160, 30));
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel8.setText("Absen Keluar");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 110, 30));
+
+        cmbLembur.setBackground(new java.awt.Color(102, 102, 102));
+        cmbLembur.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        cmbLembur.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih", "Tidak Lembur", "1 Jam", "2 Jam", "3 Jam", "4 Jam", "5 Jam" }));
+        jPanel3.add(cmbLembur, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 160, 30));
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setText("Tanggal");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 110, 30));
+
+        txtKeterangan.setColumns(20);
+        txtKeterangan.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        txtKeterangan.setRows(5);
+        jScrollPane1.setViewportView(txtKeterangan);
+
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 160, 80));
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel10.setText("ID Karyawan");
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
+
+        id.setOpaque(false);
+        id.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                idItemStateChanged(evt);
+            }
+        });
+        jPanel3.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 160, 30));
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel12.setText("Lembur");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 110, 30));
+        jPanel3.add(tgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 160, 30));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 310, 350));
+
+        jPanel4.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Save.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Save.setText("Simpan");
+        Save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveActionPerformed(evt);
+            }
+        });
+        jPanel4.add(Save, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, -1));
+
+        Edit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Edit.setText("Ubah");
+        Edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditActionPerformed(evt);
+            }
+        });
+        jPanel4.add(Edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 80, -1));
+
+        Delete.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Delete.setText("Hapus");
+        Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteActionPerformed(evt);
+            }
+        });
+        jPanel4.add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 80, -1));
+
+        Exit.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Exit.setText("Keluar");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
+        jPanel4.add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 80, -1));
+
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton1.setText("Bersih");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 80, -1));
+
+        Exit1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Exit1.setText("Keluar");
+        Exit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Exit1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(Exit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 80, -1));
+
+        Cetak.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Cetak.setText("Cetak");
+        Cetak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CetakActionPerformed(evt);
+            }
+        });
+        jPanel4.add(Cetak, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 80, -1));
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 310, 80));
+
+        jPanel5.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtCari.setBackground(new java.awt.Color(102, 102, 102));
+        txtCari.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        txtCari.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jPanel5.add(txtCari, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 550, 30));
+
+        TabelAbsen.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        TabelAbsen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TabelAbsenMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(TabelAbsen);
+
+        jPanel5.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 710, 90));
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel11.setText("Pencarian");
+        jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 30));
+
+        Cari.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Cari.setText("Cari");
+        Cari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CariActionPerformed(evt);
+            }
+        });
+        jPanel5.add(Cari, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, -1, 30));
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 730, 310));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 560));
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+        // TODO add your handling code here:
+        String sql = "insert into absen values (?,?,?,?,?,?,?)";
+        try{
+     
+            PreparedStatement stat = conn.prepareStatement(sql);
+            stat.setString(1, id.getSelectedItem().toString());
+            stat.setString(2, nama.getText());   
+            stat.setString(3, txtMasuk.getText());
+            stat.setString(4, txtKeluar.getText());
+            stat.setString(5, tgl.getText());
+            stat.setString(6, cmbLembur.getSelectedItem().toString());
+            stat.setString(7, txtKeterangan.getText());
+            
+            stat.executeUpdate();
+            JOptionPane.showMessageDialog(null,"Data Berhasil Disimpan");
+            kosong();
+            id.requestFocus();
+            datatable();
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null,"Data Gagal Disimpan"+e);
+        }
+    }//GEN-LAST:event_SaveActionPerformed
+
+    private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
+        // TODO add your handling code here:
+        try{
+            String sql = "update absen set Masuk=?,Keluar=?,Keterangan=?,tgl=?,Lembur=? where Nama=?";
+            PreparedStatement stat = conn.prepareStatement(sql);
+           
+            stat.setString(1, txtMasuk.getText());   
+            stat.setString(2, txtKeluar.getText());
+            stat.setString(3, txtKeterangan.getText());
+            stat.setString(4, tgl.getText());
+            stat.setString(5, cmbLembur.getSelectedItem().toString());
+            stat.setString(6, nama.getText());
+            
+            stat.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data Berhasil Diubah");
+            kosong();
+            id.requestFocus();
+            datatable();
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Data Gagal Diubah"+e);
+        }
+    }//GEN-LAST:event_EditActionPerformed
+
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
+        // TODO add your handling code here:
+        int ok = JOptionPane.showConfirmDialog(null,"hapus","KOnfirmasi Dialog",JOptionPane.YES_NO_CANCEL_OPTION);
+        if (ok == 0){
+            String sql = "delete from absen where Nama='"+nama.getText()+"'";
+            try{
+                PreparedStatement stat = conn.prepareStatement(sql);
+                stat.executeUpdate();
+                JOptionPane.showMessageDialog(null,"data berhasil dihapus");
+                kosong();
+                id.requestFocus();
+                datatable();
+            }catch(SQLException e){
+                JOptionPane.showMessageDialog(null,"data gagal dihapus" +e);
+            }
+        }
+    }//GEN-LAST:event_DeleteActionPerformed
+
+    private void CariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CariActionPerformed
+        // TODO add your handling code here:
+        Object [] baris = {"Id","Nama","Masuk","Keluar","Lembur","TANGGAL","Keterangan",};
+            tabmode = new DefaultTableModel (null,baris);
+            TabelAbsen.setModel(tabmode);
+            String sql = "select * from absen where Id='"+txtCari.getText()+"'";
+            try{
+                    java.sql.Statement stat = conn.createStatement();
+                    ResultSet hasil = stat.executeQuery(sql);
+                    while (hasil.next()){
+                        String a= hasil.getString("Id");
+                        String b= hasil.getString("Nama");
+                        String c= hasil.getString("Masuk");
+                        String d= hasil.getString("Keluar");
+                        String e= hasil.getString("tgl");
+                        String f= hasil.getString("Lembur");
+                        String g= hasil.getString("Keterangan");
+                        
+                        String[] data = {a,b,c,d,e,f,g};
+                        tabmode.addRow(data);
+                 
+                    
+                    }
+            } catch (Exception e){
+            }
+    }//GEN-LAST:event_CariActionPerformed
+
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+        // TODO add your handling code here:
+        new Menu().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_ExitActionPerformed
+
+    private void TabelAbsenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelAbsenMouseClicked
+        Save.setEnabled(false);
+        Edit.setEnabled(true);
+         int bar = TabelAbsen.getSelectedRow();
+        String a = tabmode.getValueAt(bar, 0).toString();
+        String b = tabmode.getValueAt(bar, 1).toString();
+        String c = tabmode.getValueAt(bar, 2).toString();
+        String d = tabmode.getValueAt(bar, 3).toString();
+        String e = tabmode.getValueAt(bar, 4).toString();
+        String f = tabmode.getValueAt(bar, 5).toString();
+        String g = tabmode.getValueAt(bar, 6).toString();
+        
+        id.setSelectedItem(a);
+        nama.setText(b);
+        txtMasuk.setText(c);
+        txtKeluar.setText(d);
+        tgl.setText(e);
+        cmbLembur.setSelectedItem(f);
+        txtKeterangan.setText(g);
+    }//GEN-LAST:event_TabelAbsenMouseClicked
+
+    private void idItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_idItemStateChanged
+        // TODO add your handling code here:
+        String[] gaji = id.getSelectedItem().toString().split("//s+");
+        String kode = gaji[0];
+        if(!kode.equals("KODE BARANG")){
+            try {
+                String gajian = "";
+                String an = id.getSelectedItem().toString();
+                switch(id.getSelectedIndex()){
+                    case 1: gajian = "1"; break;
+                    case 2: gajian = "2"; break;
+                    case 3: gajian = "3"; break;
+                    case 4: gajian = "4"; break;
+                    case 5: gajian = "5"; break;
+                    case 6: gajian = "6"; break;
+                    case 7: gajian = "7"; break;
+                    case 8: gajian = "8"; break;
+                    case 9: gajian = "9"; break;
+                    case 10: gajian = "10"; break;
+                    case 11: gajian = "11"; break;
+                    case 12: gajian = "12"; break;
+                }
+                java.sql.Statement stm = conn.createStatement();
+                java.sql.ResultSet rs = stm.executeQuery("SELECT * FROM datakaryawan WHERE Id='"+an+"'");
+                if(rs.next()){
+                    nama.setText(rs.getString("Nama"));
+                }
+
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error " + e);
+            }
+        }else{
+
+        }
+    }//GEN-LAST:event_idItemStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        kosong();
+        datatable();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void Exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Exit1ActionPerformed
+
+    private void CetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CetakActionPerformed
+        String reportSource = null;
+        String reportDest = null;
+        HashMap <String,Object> parameter = new HashMap <String,Object>();
+        try{
+             Class.forName("com.mysql.jdbc.Driver");
+            conn =DriverManager.getConnection("jdbc:mysql://localhost:3306/yellowcarwash","root","");
+            reportSource = System.getProperty("user.dir") + "/src/laporanfull/absen.jrxml";
+            reportDest = System.getProperty("user.dir") + "/src/laporanfull/absen.jasper";
+            
+            JasperReport jasperReport = JasperCompileManager.compileReport(reportSource);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,parameter,conn);
+            JasperExportManager.exportReportToHtmlFile(jasperPrint, reportDest);
+            JasperViewer.viewReport(jasperPrint,false);
+            
+        }catch(Exception e){
+            System.out.println(e);
+        }  
+          
+    }//GEN-LAST:event_CetakActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Absensi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Absensi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Absensi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Absensi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Absensi().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Cari;
+    private javax.swing.JButton Cetak;
+    private javax.swing.JButton Delete;
+    private javax.swing.JButton Edit;
+    private javax.swing.JButton Exit;
+    private javax.swing.JButton Exit1;
+    private javax.swing.JButton Save;
+    private javax.swing.JTable TabelAbsen;
+    private javax.swing.JComboBox<String> cmbLembur;
+    private javax.swing.JComboBox<String> id;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField nama;
+    private javax.swing.JTextField tgl;
+    private javax.swing.JTextField txtCari;
+    private javax.swing.JTextField txtKeluar;
+    private javax.swing.JTextArea txtKeterangan;
+    private javax.swing.JTextField txtMasuk;
+    // End of variables declaration//GEN-END:variables
+}

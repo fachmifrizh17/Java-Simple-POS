@@ -1,0 +1,123 @@
+<?xml version="1.0"?><!-- iReport connections -->
+<iReportConnectionSet>
+	<iReportConnection name="Empty datasource" connectionClass="com.jaspersoft.ireport.designer.connection.JREmptyDatasourceConnection">
+		<connectionParameter name="records"><![CDATA[1]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="data_ProgramDzul" connectionClass="com.jaspersoft.ireport.designer.connection.JDBCConnection">
+		<connectionParameter name="Username"><![CDATA[root]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[true]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[com.mysql.jdbc.Driver]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:mysql://localhost/ProgramDzul]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="koneksi_programdzul" connectionClass="com.jaspersoft.ireport.designer.connection.JDBCConnection">
+		<connectionParameter name="Username"><![CDATA[root]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[true]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[com.mysql.jdbc.Driver]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:mysql://localhost/programdzul]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="database_loginprojek" connectionClass="com.jaspersoft.ireport.designer.connection.JDBCConnection">
+		<connectionParameter name="Username"><![CDATA[root]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[true]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[com.mysql.jdbc.Driver]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:mysql://localhost/loginprojek]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="data_programnastiti" connectionClass="com.jaspersoft.ireport.designer.connection.JDBCConnection">
+		<connectionParameter name="Username"><![CDATA[root]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[true]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[com.mysql.jdbc.Driver]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:mysql://localhost/programnastiti]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="data_programkkp" connectionClass="com.jaspersoft.ireport.designer.connection.JDBCConnection">
+		<connectionParameter name="Username"><![CDATA[root]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[true]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[com.mysql.jdbc.Driver]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:mysql://localhost/programkkp]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="data" connectionClass="com.jaspersoft.ireport.designer.connection.JDBCConnection">
+		<connectionParameter name="Username"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[false]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[org.postgresql.Driver]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:postgresql://localhost:5432/DatabaseName]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="data_zakatsidiq" connectionClass="com.jaspersoft.ireport.designer.connection.JDBCConnection">
+		<connectionParameter name="Username"><![CDATA[root]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[true]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[com.mysql.jdbc.Driver]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:mysql://localhost/zakatsidiq]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="data_ProgramHariPrio" connectionClass="com.jaspersoft.ireport.designer.connection.JDBCConnection">
+		<connectionParameter name="Username"><![CDATA[root]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[true]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[com.mysql.jdbc.Driver]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:mysql://localhost/ProgramHariPrio]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="data_KKP" connectionClass="com.jaspersoft.ireport.designer.connection.JDBCConnection">
+		<connectionParameter name="Username"><![CDATA[root]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[true]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[com.mysql.jdbc.Driver]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:mysql://localhost/kkp]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="data_ProgramAndriWijaya" connectionClass="com.jaspersoft.ireport.designer.connection.JDBCConnection">
+		<connectionParameter name="Username"><![CDATA[root]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[true]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[com.mysql.jdbc.Driver]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:mysql://localhost/ProgramAndriWijaya]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="data_ProgramRifki" connectionClass="com.jaspersoft.ireport.designer.connection.JDBCConnection">
+		<connectionParameter name="Username"><![CDATA[root]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[true]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[com.mysql.jdbc.Driver]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:mysql://localhost/ProgramRifki]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="data_programilal" connectionClass="com.jaspersoft.ireport.designer.connection.JDBCConnection">
+		<connectionParameter name="Username"><![CDATA[root]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[true]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[com.mysql.jdbc.Driver]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:mysql://localhost/programilal]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="data_ProgramIndri" connectionClass="com.jaspersoft.ireport.designer.connection.JDBCConnection">
+		<connectionParameter name="Username"><![CDATA[root]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[true]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[com.mysql.jdbc.Driver]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:mysql://localhost/ProgramIndri]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[]]></connectionParameter>
+	</iReportConnection>
+</iReportConnectionSet>

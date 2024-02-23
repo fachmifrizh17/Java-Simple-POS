@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="masuk" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c90a89ec-f432-4156-8d81-62b1eda90462">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     barang_masuk.`id_bm` AS barang_masuk_id_bm,
+     barang_masuk.`nama_karyawan` AS barang_masuk_nama_karyawan,
+     barang_masuk.`id_barang` AS barang_masuk_id_barang,
+     barang_masuk.`nama_barang` AS barang_masuk_nama_barang,
+     barang_masuk.`tanggal` AS barang_masuk_tanggal,
+     barang_masuk.`jumlah` AS barang_masuk_jumlah
+FROM
+     `barang_masuk` barang_masuk]]>
+	</queryString>
+	<field name="barang_masuk_id_bm" class="java.lang.String"/>
+	<field name="barang_masuk_nama_karyawan" class="java.lang.String"/>
+	<field name="barang_masuk_id_barang" class="java.lang.String"/>
+	<field name="barang_masuk_nama_barang" class="java.lang.String"/>
+	<field name="barang_masuk_tanggal" class="java.sql.Date"/>
+	<field name="barang_masuk_jumlah" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement x="171" y="30" width="218" height="38" uuid="32e6038b-58d9-4f73-bf9a-90369f3a33be"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Alamat : Jl. Raya Rawa Buntu No.168B, Rw. Buntu, Kec. Serpong, Kota Tangerang Selatan, Banten 15310]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="85" width="555" height="1" uuid="a58c5a17-b342-49e9-9238-c9f697293b8d"/>
+			</line>
+			<line>
+				<reportElement x="2" y="82" width="555" height="1" uuid="f94fb402-dc85-4121-bf80-3ff7e3f8f6c1"/>
+			</line>
+			<staticText>
+				<reportElement x="162" y="0" width="236" height="50" uuid="3990bf14-6f3a-4de4-b309-a039bad7964c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[YELLOW CAR WASH]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="141" splitType="Stretch">
+			<staticText>
+				<reportElement x="124" y="3" width="312" height="40" uuid="dacf5223-6cde-4b0f-9f8f-dbd5205b946b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[LAPORAN BARANG MASUK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="113" width="100" height="20" uuid="abb86cfd-5153-45c6-975e-0a4cfec79c21"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID BARANG MASUK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="113" width="71" height="20" uuid="0a1856d6-0ab9-4ed9-bd59-a2c8f3704172"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID BARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="235" y="113" width="74" height="20" uuid="3bb302a7-1f98-4b45-914e-581ea1c2b9ef"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA BARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="303" y="113" width="78" height="20" uuid="1b7d893b-0741-40a0-8ca8-281026a69658"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KARYAWAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="113" width="56" height="20" uuid="5b874fb0-d4b9-438a-b47c-0e9578191417"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TGL MASUK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="113" width="56" height="20" uuid="ebaf1a92-978d-4a89-a68d-5b944bf95173"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUMLAH]]></text>
+			</staticText>
+			<line>
+				<reportElement x="64" y="112" width="413" height="1" uuid="91eaa623-db8d-4dc3-a9bb-d719af4c428c"/>
+			</line>
+			<line>
+				<reportElement x="64" y="140" width="413" height="1" uuid="dc2b7100-72f2-4fc8-bf2c-6487fcf5c32d"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="64" y="1" width="100" height="20" uuid="a51a02cb-be77-4e13-971f-8780fdec0fe7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{barang_masuk_id_bm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="1" width="68" height="20" uuid="4cb4b42d-e0da-46cd-bd61-bf70dd30d60b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{barang_masuk_id_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="1" width="66" height="20" uuid="45d00d7e-4b65-4ec8-8162-c03e2264e4bd"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{barang_masuk_nama_karyawan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="381" y="1" width="43" height="20" uuid="a8aa2d5b-6c89-4e04-8c26-1491ee10f806"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{barang_masuk_tanggal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="428" y="1" width="47" height="20" uuid="fa5ff434-ab96-462f-92db-60094f70d62f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{barang_masuk_jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="235" y="1" width="74" height="20" uuid="b469e08c-f37f-456d-8ac8-31f237337b56"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{barang_masuk_nama_barang}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="65" y="20" width="413" height="1" uuid="550f548b-70cd-44e2-8ce9-6f932535f8a9"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="369" y="89" width="142" height="20" uuid="16cff8b2-0b53-43cb-9753-c8b8157d64e7"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[(..........Alex Kurniawan..........)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="20" width="56" height="20" uuid="4cf4e4b0-8d2c-4a46-ace8-13b9566cc378"/>
+				<text><![CDATA[Tangerang,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="40" width="128" height="20" uuid="2676fa31-3678-4497-9eda-e256b1332e83"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Pemilik Yellow CarWash]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="422" y="20" width="100" height="20" uuid="74891084-81b0-43b5-ab2c-f1a2e00c7a79"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

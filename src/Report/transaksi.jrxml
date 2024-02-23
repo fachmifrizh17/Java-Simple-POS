@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="transaksi" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7a0adad4-6ed6-4456-ac9c-4268847f62e9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="all" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     transaksi.`NoTransaksi` AS transaksi_NoTransaksi,
+     transaksi.`Tanggal` AS transaksi_Tanggal,
+     transaksi.`IdKaryawan` AS transaksi_IdKaryawan,
+     transaksi.`NamaKaryawan` AS transaksi_NamaKaryawan,
+     transaksi.`IdPelanggan` AS transaksi_IdPelanggan,
+     transaksi.`NamaPelanggan` AS transaksi_NamaPelanggan,
+     transaksi.`Nopol` AS transaksi_Nopol,
+     transaksi.`JenisKendaraan` AS transaksi_JenisKendaraan,
+     transaksi.`JenisPelayanan` AS transaksi_JenisPelayanan,
+     transaksi.`Harga` AS transaksi_Harga
+FROM
+     `transaksi` transaksi
+WHERE NoTransaksi LIKE '%$P!{all}%']]>
+	</queryString>
+	<field name="transaksi_NoTransaksi" class="java.lang.String"/>
+	<field name="transaksi_Tanggal" class="java.sql.Date"/>
+	<field name="transaksi_IdKaryawan" class="java.lang.String"/>
+	<field name="transaksi_NamaKaryawan" class="java.lang.String"/>
+	<field name="transaksi_IdPelanggan" class="java.lang.String"/>
+	<field name="transaksi_NamaPelanggan" class="java.lang.String"/>
+	<field name="transaksi_Nopol" class="java.lang.String"/>
+	<field name="transaksi_JenisKendaraan" class="java.lang.String"/>
+	<field name="transaksi_JenisPelayanan" class="java.lang.String"/>
+	<field name="transaksi_Harga" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="88" splitType="Stretch">
+			<staticText>
+				<reportElement x="170" y="30" width="218" height="38" uuid="969d1c3f-1290-44d4-8d4f-ac8251e0453e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Alamat : Jl. Raya Rawa Buntu No.168B, Rw. Buntu, Kec. Serpong, Kota Tangerang Selatan, Banten 15310]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="82" width="555" height="1" uuid="70c2620f-ae59-4162-8620-b0ed8f7103fc"/>
+			</line>
+			<staticText>
+				<reportElement x="161" y="0" width="236" height="50" uuid="a8888a3a-7d1b-4204-a338-aeb0a73bd4a0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[YELLOW CAR WASH]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="85" width="555" height="1" uuid="36a4cea2-29d8-48be-aa28-eaa1e5129de7"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="149" splitType="Stretch">
+			<staticText>
+				<reportElement x="170" y="0" width="218" height="40" uuid="21538094-ef45-4eba-a51e-135107b5119e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[LAPORAN TRANSAKSI]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="144" y="57" width="100" height="20" uuid="125d00f5-7f5f-43a5-a653-a6e66f8c5e77"/>
+				<textFieldExpression><![CDATA[$F{transaksi_NoTransaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="77" width="34" height="20" uuid="53a856e7-7002-4380-9e44-8a44a83b6988"/>
+				<textFieldExpression><![CDATA[$F{transaksi_Tanggal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="97" width="100" height="20" uuid="50b77768-29b5-49ae-9c8c-37be38102779"/>
+				<textFieldExpression><![CDATA[$F{transaksi_IdKaryawan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="117" width="100" height="20" uuid="b3a44c4a-ae7d-4e18-9c51-cb4244afdee4"/>
+				<textFieldExpression><![CDATA[$F{transaksi_IdPelanggan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="57" width="100" height="20" uuid="da6af3d8-7d00-4631-a49c-a6138a32b6d0"/>
+				<text><![CDATA[NO.TRANSAKSI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="77" width="100" height="20" uuid="61735e4e-3ea6-4c0f-97e5-a52e83b32dfa"/>
+				<text><![CDATA[TANGGAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="97" width="100" height="20" uuid="1ba78e63-f81c-4e53-92f9-ce2fb579b454"/>
+				<text><![CDATA[ID KARYAWAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="117" width="100" height="20" uuid="96142949-c747-4b96-ae79-29b9cceda85b"/>
+				<text><![CDATA[ID PELANGGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="57" width="26" height="20" uuid="279beded-1d56-4cc6-900e-249cdfc0bd37"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="77" width="26" height="20" uuid="d8de34cc-f490-4efd-8d1a-3f1d39d21f73"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="97" width="26" height="20" uuid="82aa8076-d933-4ef4-add4-d34d9706472d"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="117" width="26" height="20" uuid="2a025dc2-ce31-4b32-80b8-29b511750077"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="21" width="554" height="1" uuid="d9276ef5-ee79-426c-b142-c5e9c591bb1a"/>
+			</line>
+			<staticText>
+				<reportElement x="1" y="2" width="77" height="20" uuid="7da80a89-7f7b-427d-b7d6-84bddedb2ca4"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[KARYAWAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="2" width="100" height="20" uuid="4225b7bd-06a3-4d67-84d7-f82dc9404b8a"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[PELANGGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="2" width="100" height="20" uuid="47eb31f5-a24b-4cee-9e45-f36899035be5"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[KENDARAAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="2" width="77" height="20" uuid="b8809cf9-93f8-43da-b4a2-5f65b18dfd37"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[HARGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="2" width="100" height="20" uuid="c8aa61dc-87b1-4132-873e-aaf41295df7d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[NO. POLISI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="2" width="100" height="20" uuid="2024bf01-6461-4560-aca7-f11b1edbbb63"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[JENIS PELAYANAN]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="2" width="554" height="1" uuid="8e7ad15b-5744-440a-8fa4-379e4d6aeda8"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="77" height="20" uuid="456d5d63-50ff-4612-b693-bcf7184b73bb"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{transaksi_NamaKaryawan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="0" width="100" height="20" uuid="0cdafa79-8e21-498c-a377-ee36dc5a347f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{transaksi_NamaPelanggan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="0" width="100" height="20" uuid="d2047f87-1980-4940-b1cb-d5fdc30cf0cd"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{transaksi_JenisPelayanan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="278" y="0" width="100" height="20" uuid="66da7a87-90d9-49bf-8fd4-150523a7fa21"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{transaksi_JenisKendaraan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="0" width="100" height="20" uuid="cc191a35-608c-4bcf-8d7e-607e1db80a58"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{transaksi_Nopol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="0" width="77" height="20" uuid="713fe4c6-752e-4d04-828c-85175e54f4a9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{transaksi_Harga}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="19" width="554" height="1" uuid="09ac5c75-7080-4b52-88d7-30507169dcbe"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="122" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="388" y="28" width="151" height="20" uuid="1e293af9-314c-4c9c-8d4e-23991ee93942"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="348" y="38" width="128" height="20" uuid="ac3d20ff-4909-476c-bc51-b22f18682b35"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Pemilik Yellow CarWash]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="97" width="142" height="20" uuid="1ffae3df-ed37-4d62-9a24-d2f2705d2eb8"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[(..........Alex Kurniawan..........)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="28" width="100" height="20" uuid="f6b26ee6-7678-4e19-997d-460a8fcc5ea0"/>
+				<text><![CDATA[Tangerang,]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="3" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
